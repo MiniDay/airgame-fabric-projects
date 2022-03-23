@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "airgame_protect_fire",
+  "version": "${version}",
+  "name": "AirGame-Protect-Fire",
+  "description": "方块防火保护模组",
+  "authors": [
+    "MiniDay"
+  ],
+  "contact": {
+    "website": "https://www.57block.cn"
+  },
+  "environment": "*",
+  "mixins": [
+    "airgame_protect_fire.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  }
+}

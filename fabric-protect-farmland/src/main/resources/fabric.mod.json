@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "airgame_protect_farmland",
+  "version": "${version}",
+  "name": "AirGame-Protect-Farmland",
+  "description": "耕地践踏保护模组",
+  "authors": [
+    "MiniDay"
+  ],
+  "contact": {
+    "website": "https://www.57block.cn"
+  },
+  "environment": "*",
+  "mixins": [
+    "airgame_protect_farmland.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  }
+}

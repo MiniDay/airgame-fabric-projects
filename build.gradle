@@ -1,0 +1,76 @@
+//file:noinspection GroovyAssignabilityCheck
+//file:noinspection GrUnresolvedAccess
+
+plugins {
+    id "java"
+    id "fabric-loom" version "0.10-SNAPSHOT" apply false
+}
+
+group 'net.airgame.fabric'
+version '1.0.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'fabric-loom'
+
+    group = getRootProject().group
+    version = getRootProject().version
+
+    repositories {
+        maven {
+            url = "https://maven.airgame.net/repository/maven-public/"
+        }
+    }
+
+    configurations {
+        all {
+            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:${project.minecraft_version}"
+        mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+        modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+        modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    processResources {
+        inputs.property "version", project.version
+        filesMatching("plugin.yml") {
+            expand "version": project.version
+        }
+        filesMatching("fabric.mod.json") {
+            expand "version": project.version
+        }
+        duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    }
+
+    loom {
+        runs {
+            client {
+                programArgs "--username", "Viosin"
+            }
+
+            server {
+                property("airgame.api.debug", "true")
+                serverWithGui()
+            }
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.setEncoding("UTF-8")
+    }
+
+    remapJar {
+        from([getRootProject().file("LICENSE")])
+        duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+        destinationDir(getRootProject().buildDir)
+    }
+}

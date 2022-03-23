@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "airgame_auto_keep_inventory",
+  "version": "${version}",
+  "name": "AirGame-Auto-KeepInventory",
+  "description": "自动设置死亡不掉落模组",
+  "authors": [
+    "MiniDay"
+  ],
+  "contact": {
+    "website": "https://www.57block.cn"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "server": [
+      "net.airgame.fabric.auto.keep.inventory.AutoKeepInventoryMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  }
+}

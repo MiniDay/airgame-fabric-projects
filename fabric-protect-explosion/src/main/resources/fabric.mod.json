@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "airgame_protect_explosion",
+  "version": "${version}",
+  "name": "AirGame-Protect-Explosion",
+  "description": "方块爆炸保护模组",
+  "authors": [
+    "MiniDay"
+  ],
+  "contact": {
+    "website": "https://www.57block.cn"
+  },
+  "environment": "*",
+  "mixins": [
+    "airgame_protect_explosion.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  }
+}

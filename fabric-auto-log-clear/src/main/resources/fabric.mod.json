@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "airgame_auto_log_clear",
+  "version": "${version}",
+  "name": "AirGame-Auto-LogClear",
+  "description": "日志自动清理模组",
+  "authors": [
+    "MiniDay"
+  ],
+  "contact": {
+    "website": "https://www.57block.cn"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.airgame.fabric.auto.log.clear.AutoLogClearMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  }
+}

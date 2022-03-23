@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = 'airgame-repo'
+            url = 'https://maven.airgame.net/repository/maven-public/'
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'airgame-fabric-projects'
+include 'fabric-auto-keep-inventory'
+include 'fabric-auto-log-clear'
+include 'fabric-auto-restart'
+include 'fabric-protect-explosion'
+include 'fabric-protect-farmland'
+include 'fabric-protect-fire'
