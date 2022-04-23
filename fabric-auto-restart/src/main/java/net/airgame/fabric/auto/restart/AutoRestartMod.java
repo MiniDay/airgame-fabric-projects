@@ -35,7 +35,7 @@ public class AutoRestartMod implements DedicatedServerModInitializer {
             int hour = min / 60;
             LOGGER.info("已计划在 {} ms 后自动关闭服务器。({}h{}m{}s)", delay, hour, min % 60, second % 60);
         });
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -> scheduler.shutdown());
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -> scheduler.shutdownNow());
     }
 
     public void submitStopServer() {
